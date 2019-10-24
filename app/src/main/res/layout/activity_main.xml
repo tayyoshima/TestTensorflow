@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.swu.bme.chocofire.testtensorflow.MainActivity">
+
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center|top"
+        app:layout_constraintBottom_toTopOf="@+id/textViewResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.wonderkiln.camerakit.CameraView>
+
+
+    <Button
+        android:id="@+id/btnToggleCamera"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+
+        android:text="สลับกล้อง"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnDetectObject"
+        app:layout_constraintStart_toStartOf="@+id/btnDetectObject"
+        app:layout_constraintTop_toBottomOf="@+id/btnDetectObject" />
+
+    <Button
+        android:id="@+id/btnDetectObject"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+        android:text="ค้นหา"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnToggleCamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnToggleCamera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <ImageView
+        android:id="@+id/imageViewResult"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="3dp"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewResult"
+        app:layout_constraintEnd_toStartOf="@+id/textViewResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewResult" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="304dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="124dp"
+        android:fadeScrollbars="false"
+        android:gravity="center"
+        android:maxLines="15"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnDetectObject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewResult"
+        app:layout_constraintTop_toBottomOf="@+id/cameraView" />
+
+    <EditText
+        android:id="@+id/editTTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Text to Speech"
+        app:layout_constraintBottom_toTopOf="@+id/btnSpeak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <Button
+        android:id="@+id/btnSpeak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="พูด"
+        app:layout_constraintBottom_toTopOf="@+id/btnDetectObject"
+        app:layout_constraintEnd_toEndOf="@+id/editTTS"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/editTTS"
+        app:layout_constraintTop_toBottomOf="@+id/editTTS" />
+
+</android.support.constraint.ConstraintLayout>
