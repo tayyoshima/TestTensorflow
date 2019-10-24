@@ -33,17 +33,17 @@ public interface Classifier {
         @Override
         public String toString() {
             String resultString = "";
-            if (id != null) {
+           /* if (id != null) {
                 resultString = resultString + "[" + id + "] ";
-            }
+            }*/
 
             if (title != null) {
                 resultString = resultString + title + " ";
             }
 
-            if (confidence != null) {
+            /*if (confidence != null) {
                 resultString = resultString + String.format("(%.1f%%) ", confidence * 100.0f);
-            }
+            }*/
 
             return resultString.trim();
         }

@@ -80,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
                 textViewResult.setText(results.toString());
 
+                speak();
+
+
             }
 
             @Override
@@ -115,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "This language is not supported!",
                                 Toast.LENGTH_SHORT);
                     } else {
-                        btnSpeak.setEnabled(true);
+                        btnDetectObject.setEnabled(true);
                         textToSpeech.setPitch(0.6f);
                         textToSpeech.setSpeechRate(1.0f);
                         speak();
@@ -125,16 +128,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Init View
-        btnSpeak = (Button)findViewById(R.id.btnSpeak);
-        editTTS = (EditText)findViewById(R.id.editTTS);
 
-        btnSpeak.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                speak();
-            }
-        });
     }
 
     @Override
@@ -192,11 +186,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void speak() {
-        String text = editTTS.getText().toString();
+        String text = textViewResult.getText().toString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
         } else {
             textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         }
     }
+
 }
